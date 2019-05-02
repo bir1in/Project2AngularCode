@@ -26,7 +26,10 @@ export class FindComponent {
       this.heroService.findHero(this.hero)
       .subscribe(
         data => this.heroData = data,
-        error => this.clientMessage.message = 'SOMETHING WENT WRONG.'
+        responseError => {
+          this.heroData = null;
+          this.clientMessage = responseError.error;
+        }
       );
     }
 }

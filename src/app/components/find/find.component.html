@@ -14,7 +14,7 @@
            <div *ngIf="heroData">
                 {{ heroData.superPower }}
             </div>
-           <div>
+           <div *ngIf="!heroData">
                {{ clientMessage.message }}
            </div>
         </div>
