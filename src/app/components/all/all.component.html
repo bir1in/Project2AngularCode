@@ -5,7 +5,7 @@
     <div class="panel-body">
     <div class="list-group">
         <div class="list-group-item list-group-item-demo">
-           <div *ngFor="let hero of heroes" class="list-group-item">
+           <div *ngFor="let hero of heroes.heroList" class="list-group-item">
                <strong>ID</strong>: {{ hero.id }},
                <strong>Name</strong>: {{ hero.name }},
                <strong>Power</strong>: {{ hero.superPower }},
@@ -14,7 +14,7 @@
            <div>
                 <button class="btn btn-primary btn-center" (click)="findAllHeroes()">GET</button>
            </div>
-           <div *ngIf="heroes && heroes.length == 0">
+           <div *ngIf="heroes.heroList || heroes.heroList.length == 0">
                {{ clientMessage.message }}
            </div> 
         </div>
