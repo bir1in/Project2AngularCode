@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../models/hero.model';
 import { ClientMessage } from '../../models/client-message.model';
-import { HeroList } from '../../models/hero-list.model';
 
 @Component({
   selector: 'app-all',
@@ -16,7 +15,7 @@ export class AllComponent implements OnInit {
       this.findAllHeroes();
     }
 
-    public heroes: HeroList = new HeroList([]);
+    public heroes: Hero[] = [];
 
     public clientMessage: ClientMessage = new ClientMessage('No heroes to display.');
 
@@ -26,7 +25,7 @@ export class AllComponent implements OnInit {
       this.heroService.findAllHeroes()
         .subscribe(
           data => this.heroes = data,
-          responseError => this.clientMessage = responseError.error
+          error => this.clientMessage.message = 'Something went wrong.'
         );
     }
 }
