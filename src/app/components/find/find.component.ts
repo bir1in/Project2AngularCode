@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Hero } from '../../models/hero.model';
-import { HeroService } from '../../services/hero.service';
+import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service';
 import { ClientMessage } from '../../models/client-message.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-find',
@@ -9,25 +10,28 @@ import { ClientMessage } from '../../models/client-message.model';
   styleUrls: ['./find.component.css']
 })
 export class FindComponent {
-    title = 'Find Hero';
+    title = 'Find User';
 
-    constructor(private heroService: HeroService) {}
+    constructor(private router: Router, private userService: UserService) {}
 
     //To capture user input
-    public hero: Hero = new Hero(0,'','',false);
+    public user: User = new User(0,'','');
 
-    //To present received hero
-    public heroData: Hero = new Hero(0,'','',false);
+    //To present received user
+    public userData: User = new User(0,'','');
 
     //To message the user
     public clientMessage: ClientMessage = new ClientMessage('');
 
-    public findHero(): void {
-      this.heroService.findHero(this.hero)
+    public findUser(): void {
+      this.userService.findUser(this.user)
       .subscribe(
-        data => this.heroData = data,
+        data => {
+        this.userData = data;
+        this.router.navigate(['/all']);
+        },
         responseError => {
-          this.heroData = null;
+          this.userData = null;
           this.clientMessage = responseError.error;
         }
       );

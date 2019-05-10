@@ -7,4 +7,4 @@ export const environment = {
   production: false
 };
 
-export const HERO_URL = `http://localhost:8085/SpringSampleREST/hero`;
+export const USER_URL = `http://localhost:8081/Project_2/users`;

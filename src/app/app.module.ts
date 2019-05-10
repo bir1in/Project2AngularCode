@@ -19,7 +19,7 @@ import { FindComponent } from './components/find/find.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 //Services
-import { HeroService } from './services/hero.service';
+import { UserService } from './services/user.service';
 import { CustomInterceptor } from './session/custom-interceptor';
 
 @NgModule({
@@ -37,7 +37,7 @@ import { CustomInterceptor } from './session/custom-interceptor';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HeroService, {
+  providers: [UserService, {
     provide: HTTP_INTERCEPTORS,
     useClass: CustomInterceptor,
     multi: true

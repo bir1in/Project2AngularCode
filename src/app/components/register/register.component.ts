@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { HeroService } from '../../services/hero.service';
-import { Hero } from '../../models/hero.model';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user.model';
 import { ClientMessage } from '../../models/client-message.model';
 
 @Component({
@@ -10,19 +10,19 @@ import { ClientMessage } from '../../models/client-message.model';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-    title = 'Register Hero';
+    title = 'Register User';
 
     //Constructor Injection
-    constructor(private heroService: HeroService) { }
+    constructor(private userService: UserService) { }
 
     //For data binding
-    public hero: Hero = new Hero(0,'','',false);
+    public user: User = new User(0,'','');
 
     //To message the user
     public clientMessage: ClientMessage = new ClientMessage('');
 
-    public registerHero(): void {
-      this.heroService.registerHero(this.hero)
+    public registerUser(): void {
+      this.userService.registerUser(this.user)
       .subscribe(
         data => this.clientMessage = data,
         responseError => this.clientMessage = responseError.error
