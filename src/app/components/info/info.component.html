@@ -1,0 +1,106 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Input Information
+  </h1>
+</div>
+<div class="container">
+<h2>Input:</h2>
+<form class="forms" action="/#">
+  <label for="cargo">Cargo Capacity</label><br>
+  <input type="text" name="cargo" placeholder="Enter Cargo Capacity"><br>
+  <label for="passengers">Passengers</label><br>
+  <select id="passengerList1">
+    <option>Select passengers</option>
+  </select><br>
+  <select id="passengerList2">
+    <option>Select passengers</option>
+  </select><br>
+  <select id="passengerList3">
+    <option>Select passengers</option>
+  </select><br>
+  <select id="passengerList4">
+    <option>Select passengers</option>
+  </select><br>
+  <select id="passengerList5">
+    <option>Select passengers</option>
+  </select><br><br>
+  <input type="submit" id="submitBtn" value="Find Compatible Ships"><br><br>
+  <h2>List of people</h2>
+  <div class="parent">
+    <ul class ="peoples"> 
+      <li class="peopleList" *ngFor="let eachPeople of peoples" [class.selected]="eachPeople === selectedPeople" (click)="onSelect(eachPeople)">
+       Name: {{eachPeople.name}} <br>
+      </li>
+      
+  </ul>
+  <div *ngIf="selectedPeople" class="details">
+    <div class="detailList"> 
+      <h3>You selected: {{selectedPeople.name}}</h3>
+      <h2>Display detail:</h2>
+      <ul>
+        <li>Name: {{selectedPeople.name}}</li>
+        <li>Gender: {{selectedPeople.gender}}</li>
+        <li>Birth Year: {{selectedPeople.birth_year}}</li>
+        <li>Hair Color: {{selectedPeople.hair_color}}</li>
+        <li>Height: {{selectedPeople.height}}</li>
+        <li>Mass: {{selectedPeople.mass}}</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  <h2>List of planet</h2>
+  <div class="parent">
+      <ul class ="planets"> 
+        <li class="planetList" *ngFor="let eachPlanet of planets" [class.selected]="eachPlanet === selectedPlanet" (click)="onSelect2(eachPlanet)">
+         Name: {{eachPlanet.name}} <br>
+        </li>
+    </ul>
+    <div *ngIf="selectedPlanet" class="details">
+        <div class="detailList"> 
+          <h3>You selected: {{selectedPlanet.name}}</h3>
+          <h2>Display detail:</h2>
+          <ul>
+            <li>Name: {{selectedPlanet.name}}</li>
+            <li>Population: {{selectedPlanet.population}}</li>
+            <li>Rotation Period: {{selectedPlanet.rotation_period}}</li>
+            <li>Orbital Period: {{selectedPlanet.orbital_period}}</li>
+            <li>Diameter: {{selectedPlanet.diameter}}</li>
+            <li>Climate: {{selectedPlanet.climate}}</li>
+            <li>Terrain: {{selectedPlanet.terrain}}</li>
+            <li>Gravity: {{selectedPlanet.gravity}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+    <h2>List of starship</h2>
+    <div class="parent">
+   
+      <ul class ="starships"> 
+        <li class="starshipList" *ngFor="let eachStarship of starships" [class.selected]="eachStarship === selectedStarship" (click)="onSelect3(eachStarship)">
+         Name: {{eachStarship.name}} <br>
+        </li>
+    </ul>
+    <div *ngIf="selectedStarship" class="details">
+        <div class="detailList"> 
+          <h3>You selected: {{selectedStarship.name}}</h3>
+          <h2>Display detail:</h2>
+          <ul>
+            <li>Name: {{selectedStarship.name}}</li>
+            <li>Model: {{selectedStarship.model}}</li>
+            <li>Manufacturer: {{selectedStarship.manufacturer}}</li>
+            <li>Cost: {{selectedStarship.cost_in_credits}}</li>
+            <li>Cargo Capacity: {{selectedStarship.cargo_capacity}}</li>
+            <li>Passengers hold: {{selectedStarship.passengers}}</li>
+            <li>Consumables: {{selectedStarship.consumables}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+</form>
+</div>

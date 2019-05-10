@@ -28,7 +28,7 @@ export class FindComponent {
       .subscribe(
         data => {
         this.userData = data;
-        this.router.navigate(['/all']);
+        this.router.navigate(['/info']);
         },
         responseError => {
           this.userData = null;
