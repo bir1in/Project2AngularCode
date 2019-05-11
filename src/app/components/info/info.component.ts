@@ -20,16 +20,11 @@ export class InfoComponent implements OnInit {
   starships = starshipList;
   constructor(private router: Router, private userService: UserService) {}
 
+  public people: People = new People('','','','','','','','');
   public peoples: PeopleList = new PeopleList([]);
 
-  //To capture user input
-  public people: People = new People();
-
-  //To present received user
-  public peopleData: People = new People();
-
   //To message the user
-  public clientMessage: ClientMessage = new ClientMessage('');
+  public clientMessage: ClientMessage = new ClientMessage('no people to display');
   /*
   public findPeopleById2(): void {
     this.userService.findPeopleById(this.people)
@@ -46,13 +41,15 @@ export class InfoComponent implements OnInit {
   */
   public findPeopleById(): void {
     this.userService.findPeopleById()
-      .subscribe(
-        data => this.peoples = data,
+      .subscribe( 
+        data => {this.peoples = data,
+        console.log(data);
+      },
         responseError => this.clientMessage = responseError.error
       );
   }
   ngOnInit() {
-    
+    this.findPeopleById();
   }
   //method when select in the list it will highlight
   selectedPeople: People;
@@ -67,5 +64,4 @@ export class InfoComponent implements OnInit {
   onSelect3(starship: Starship): void{
     this.selectedStarship = starship;
   }
-
 }

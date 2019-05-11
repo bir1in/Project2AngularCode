@@ -26,8 +26,8 @@
     <option>Select passengers</option>
   </select><br><br>
   <input type="submit" id="submitBtn" value="Find Compatible Ships"><br><br>
-  <input type="submit" id="submitBtn" (click)="findPeopleById()" value="Find People"><br><br>
-  
+
+  <!--
   <h2>List of people</h2>
   <div class="parent">
     <ul class ="peoples"> 
@@ -94,6 +94,18 @@
         </div>
       </div>
     </div>
- 
+    -->
+ <div *ngFor="let people of peoples.peopleList">
+      <strong>Name</strong>: {{ people.name }},
+      <strong>height</strong>: {{ people.height }},
+      <strong>Gender</strong>: {{ people.gender }}
+  </div>
+  <div>
+      <input type="submit" id="submitBtn" (click)="findPeopleById()" value="Find People"><br><br>  
+    <button class="btn btn-primary btn-center" (click)="findAllHeroes()">GET</button>
+  </div>
+  <div *ngIf="peoples.peopleList">
+      {{ clientMessage.message }}
+  </div> 
 </form>
 </div>
