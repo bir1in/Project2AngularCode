@@ -1,4 +1,3 @@
-import { User } from "./user.model";
 import { People } from "./people";
 
 export class PeopleList {

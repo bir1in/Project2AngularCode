@@ -6,6 +6,7 @@
 </div>
 <div class="container">
 <h2>Input:</h2>
+<!--
 <form class="forms" action="/#">
   <label for="cargo">Cargo Capacity</label><br>
   <input type="text" name="cargo" placeholder="Enter Cargo Capacity"><br>
@@ -27,7 +28,7 @@
   </select><br><br>
   <input type="submit" id="submitBtn" value="Find Compatible Ships"><br><br>
 
-  <!--
+  
   <h2>List of people</h2>
   <div class="parent">
     <ul class ="peoples"> 
@@ -102,10 +103,12 @@
   </div>
   <div>
       <input type="submit" id="submitBtn" (click)="findPeopleById()" value="Find People"><br><br>  
-    <button class="btn btn-primary btn-center" (click)="findAllHeroes()">GET</button>
+      <input type="submit" id="submitBtn" (click)="findPlanetById()" value="Find Planet"><br><br> 
+      <input type="submit" id="submitBtn" (click)="findStarshipById()" value="Find Starship"><br><br> 
+    <!-- <button class="btn btn-primary btn-center" (click)="findAllHeroes()">GET</button> -->
   </div>
   <div *ngIf="peoples.peopleList">
       {{ clientMessage.message }}
   </div> 
-</form>
+<!-- </form> -->
 </div>

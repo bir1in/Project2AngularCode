@@ -13,6 +13,8 @@ import { People } from '../models/people';
 import { Planet } from '../models/planets';
 import { Starship } from '../models/starships';
 import { PeopleList } from '../models/people-list.model';
+import { PlanetList } from '../models/planet-list.model';
+import { StarshipList } from '../models/starship-list.model';
 
 @Injectable()
 export class UserService {
@@ -49,13 +51,13 @@ export class UserService {
             .catch(this.handleError);
   }
 
-  public findPlanetById(): Observable<Planet> {
+  public findPlanetById(): Observable<PlanetList> {
     return this.http
             .get(`${USER_URL}/findPlanet`)
             .catch(this.handleError);
   }
 
-  public findStarshipById(): Observable<Starship> {
+  public findStarshipById(): Observable<StarshipList> {
     return this.http
             .get(`${USER_URL}/findStarship`)
             .catch(this.handleError);
