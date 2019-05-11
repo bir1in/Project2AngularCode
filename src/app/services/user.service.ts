@@ -9,6 +9,10 @@ import { User } from '../models/user.model';
 import { ClientMessage } from '../models/client-message.model';
 import { USER_URL } from '../../environments/environment';
 import { UserList } from '../models/user-list.model';
+import { People } from '../models/people';
+import { Planet } from '../models/planets';
+import { Starship } from '../models/starships';
+import { PeopleList } from '../models/people-list.model';
 
 @Injectable()
 export class UserService {
@@ -30,6 +34,30 @@ export class UserService {
   public findAllUsers(): Observable<UserList> {
     return this.http
             .get(`${USER_URL}/all`)
+            .catch(this.handleError);
+  }
+
+  public findPeopleById(): Observable<PeopleList> {
+    return this.http
+            .get(`${USER_URL}/findPeople`)
+            .catch(this.handleError);
+  }
+
+  public findPeopleById2(people: People): Observable<People> {
+    return this.http
+            .get(`${USER_URL}/findPeople`)
+            .catch(this.handleError);
+  }
+
+  public findPlanetById(): Observable<Planet> {
+    return this.http
+            .get(`${USER_URL}/findPlanet`)
+            .catch(this.handleError);
+  }
+
+  public findStarshipById(): Observable<Starship> {
+    return this.http
+            .get(`${USER_URL}/findStarship`)
             .catch(this.handleError);
   }
 

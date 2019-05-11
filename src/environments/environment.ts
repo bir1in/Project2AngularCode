@@ -7,4 +7,4 @@ export const environment = {
   production: false
 };
 
-export const USER_URL = `http://localhost:8081/Project_2/users`;
+export const USER_URL = `http://localhost:8081/Project_2/user`;

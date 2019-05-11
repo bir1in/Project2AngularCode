@@ -26,6 +26,8 @@
     <option>Select passengers</option>
   </select><br><br>
   <input type="submit" id="submitBtn" value="Find Compatible Ships"><br><br>
+  <input type="submit" id="submitBtn" (click)="findPeopleById()" value="Find People"><br><br>
+  
   <h2>List of people</h2>
   <div class="parent">
     <ul class ="peoples"> 
@@ -40,11 +42,8 @@
       <h2>Display detail:</h2>
       <ul>
         <li>Name: {{selectedPeople.name}}</li>
-        <li>Gender: {{selectedPeople.gender}}</li>
-        <li>Birth Year: {{selectedPeople.birth_year}}</li>
-        <li>Hair Color: {{selectedPeople.hair_color}}</li>
-        <li>Height: {{selectedPeople.height}}</li>
-        <li>Mass: {{selectedPeople.mass}}</li>
+        <li>Homeworld: {{selectedPeople.homeworld}}</li>
+        <li>Starships: {{selectedPeople.starships}}</li>
       </ul>
     </div>
   </div>
@@ -64,12 +63,7 @@
           <ul>
             <li>Name: {{selectedPlanet.name}}</li>
             <li>Population: {{selectedPlanet.population}}</li>
-            <li>Rotation Period: {{selectedPlanet.rotation_period}}</li>
-            <li>Orbital Period: {{selectedPlanet.orbital_period}}</li>
-            <li>Diameter: {{selectedPlanet.diameter}}</li>
-            <li>Climate: {{selectedPlanet.climate}}</li>
-            <li>Terrain: {{selectedPlanet.terrain}}</li>
-            <li>Gravity: {{selectedPlanet.gravity}}</li>
+            <li>Residents: {{selectedPlanet.residents}}</li>
           </ul>
         </div>
       </div>
@@ -92,7 +86,6 @@
           <ul>
             <li>Name: {{selectedStarship.name}}</li>
             <li>Model: {{selectedStarship.model}}</li>
-            <li>Manufacturer: {{selectedStarship.manufacturer}}</li>
             <li>Cost: {{selectedStarship.cost_in_credits}}</li>
             <li>Cargo Capacity: {{selectedStarship.cargo_capacity}}</li>
             <li>Passengers hold: {{selectedStarship.passengers}}</li>
