@@ -1,19 +1,25 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { CreateaccountComponent } from './components/createaccount/createaccount.component';
-const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'createaccount',
-    component: CreateaccountComponent
-  }
+// Modules
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+// Components
+
+
+import { InfoComponent } from './components/info/info.component';
+import { RegisterComponent } from './register/register.component';
+import { AllComponent } from './all/all.component';
+import { FindComponent } from './find/find.component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'find', pathMatch: 'full' },
+  { path: 'register',  component: RegisterComponent },
+  { path: 'all',  component: AllComponent },
+  { path: 'find',  component: FindComponent },
+  { path: 'info',  component: InfoComponent }
 ];
+ 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

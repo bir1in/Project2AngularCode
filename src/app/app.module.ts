@@ -5,9 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShipsComponent } from './components/ships/ships.component';
 import { InfoComponent } from './components/info/info.component';
-import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
-import { CreateaccountComponent } from './components/createaccount/createaccount.component';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule } from '@angular/http';
@@ -18,18 +16,22 @@ import { StarshipDetailComponent } from './starship-detail/starship-detail.compo
 import { PeopleService } from './services/people.service';
 import { PlanetService } from './services/planet.service';
 import { StarshipService } from './services/starship.service';
+import { RegisterComponent } from './register/register.component';
+import { FindComponent } from './find/find.component';
+import { AllComponent } from './all/all.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShipsComponent,
     InfoComponent,
-    LoginComponent,
     NavComponent,
-    CreateaccountComponent,
     PeopleDetailComponent,
     PlanetDetailComponent,
     StarshipDetailComponent,
+    RegisterComponent,
+    FindComponent,
+    AllComponent,
   ],
   imports: [
     BrowserModule,

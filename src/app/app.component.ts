@@ -19,14 +19,14 @@ export class AppComponent {
 
   constructor(private us: UserService) {
     //this.peopleObservable = this.us.get_people();
-    this.us.get_people().subscribe((res: People[])=> {
-      this.people = res;
-    });
-    this.us.get_planets().subscribe((res: Planet[])=> {
-      this.planets = res;
-    });
-    this.us.get_starships().subscribe((res: Starship[])=> {
-      this.starships = res;
-    });
+    // this.us.get_people().subscribe((res: People[])=> {
+    //   this.people = res;
+    // });
+    // this.us.get_planets().subscribe((res: Planet[])=> {
+    //   this.planets = res;
+    // });
+    // this.us.get_starships().subscribe((res: Starship[])=> {
+    //   this.starships = res;
+    // });
   }
 }
